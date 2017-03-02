@@ -261,7 +261,7 @@ public class GameLayout extends RelativeLayout implements View.OnClickListener {
     }
 
     //动画层
-    private RelativeLayout mAnimaLayout;
+    public RelativeLayout mAnimaLayout;
 
     /**
      * 交换游戏的Item
@@ -299,12 +299,12 @@ public class GameLayout extends RelativeLayout implements View.OnClickListener {
 
         //设置动画
         TranslateAnimation anima = new TranslateAnimation(0, mSecond.getLeft() - mFirst.getLeft(), 0, mSecond.getTop() - mFirst.getTop());
-        anima.setDuration(5000);
+        anima.setDuration(300);
         anima.setFillAfter(true);
         first.startAnimation(anima);
 
         TranslateAnimation anima2 = new TranslateAnimation(0, mFirst.getLeft() - mSecond.getLeft(), 0, mFirst.getTop() - mSecond.getTop());
-        anima2.setDuration(5000);
+        anima2.setDuration(300);
         anima2.setFillAfter(true);
         second.startAnimation(anima2);
 
@@ -405,15 +405,15 @@ public class GameLayout extends RelativeLayout implements View.OnClickListener {
      * 游戏成功后跳转下一关
      */
     public void nextLevel(){
-        this.removeAllViews();
+        GameLayout.this.removeAllViews();
+
+        mBitmaps.clear();
+        mGameItems = null;
+
         isOnMeasure = false;
         mAnimaLayout = null;
         mColumn++;
         isSuccess = false;
-        //切图
-        initBitmap();
-        //生成卡片
-        initItem();
     }
 
     /**
@@ -427,6 +427,7 @@ public class GameLayout extends RelativeLayout implements View.OnClickListener {
 
 
     private boolean isPause = false;
+
     /**
      *暂停游戏
      */
@@ -451,6 +452,5 @@ public class GameLayout extends RelativeLayout implements View.OnClickListener {
     private void countPlayTimeByLevel(){
         playTime = (int) Math.pow(2,level)*60;
     }
-
 
 }
