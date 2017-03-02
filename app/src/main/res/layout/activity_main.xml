@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.llg.pingtu.MainActivity">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/game_view"
+       android:orientation="horizontal"
+       android:layout_margin="3dp"
+       >
+      <TextView
+          android:id="@+id/level_view"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:textSize="20sp"
+          android:gravity="center"
+          android:layout_weight="1"
+          android:background="@drawable/text_bg"
+          android:text="level:"
+          android:padding="4dp"
+          android:layout_marginRight="10dp"
+          />
+      <TextView
+          android:id="@+id/time_view"
+          android:background="@drawable/text_bg"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:textSize="20sp"
+          android:gravity="center"
+          android:layout_weight="1"
+          android:padding="4dp"
+          android:layout_marginLeft="10dp"
+          android:text="time:"/>
+
+   </LinearLayout>
+
+   <com.llg.pingtu.view.GameLayout
+       android:id="@+id/game_view"
+       android:padding="2dp"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_centerInParent="true"
+       >
+   </com.llg.pingtu.view.GameLayout>
+
+</RelativeLayout>
