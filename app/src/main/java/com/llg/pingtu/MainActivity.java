@@ -2,9 +2,10 @@ package com.llg.pingtu;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.llg.pingtu.view.GameLayout;
 
@@ -35,14 +36,12 @@ public class MainActivity extends AppCompatActivity {
                                 mGameLayout.nextLevel();
                             }
                         }).setCancelable(false).show();
-
             }
 
             @Override
             public void UIChange(int currentTime,int level ) {
                 timeTv.setText("time:"+currentTime);
                 levelTv.setText("level:"+level);
-
             }
 
             @Override
@@ -66,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
     }
 
     @Override
